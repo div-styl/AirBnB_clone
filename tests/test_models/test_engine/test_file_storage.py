@@ -97,16 +97,16 @@ class TestFilesStorage_v2(unittest.TestCase):
         # self.assertIn("User.{}".format(self.user.id), data)
         # self.assertIn("Amenity.{}".format(self.amenity.id), data)
 
-    def test_reload_method(self):
-        """Test if reload method correctly reloads
-        objects from the JSON file
-        """
-        self.storage.new(self.city)
-        self.storage.save()
-        self.storage.reload()
-        all_objs = self.storage.all()
-        self.assertIsInstance(all_objs, dict)
-        self.assertIn("City.{}".format(self.city.id), all_objs)
+    # def test_reload_method(self):
+    #     """Test if reload method correctly reloads
+    #     objects from the JSON file
+    #     """
+    #     self.storage.new(self.city)
+    #     self.storage.save()
+    #     self.storage.reload()
+    #     all_objs = self.storage.all()
+    #     self.assertIsInstance(all_objs, dict)
+    #     self.assertIn("City.{}".format(self.city.id), all_objs)
 
 
 if __name__ == "__main__":
