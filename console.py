@@ -110,7 +110,7 @@ class HBNBCommand(cmd.Cmd):
                         string += " " + elm
                     self.do_update(string)
         else:
-            print("*** Unknown syntax: {}".format(argu))
+            return False
 
     def do_quit(self, argu):
         """Quit command to exit the program"""
