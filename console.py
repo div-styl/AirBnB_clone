@@ -118,7 +118,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, argu):
         """EOF command to exit the program"""
-        print()  # ! new argu could be error
+        #print()  # ! new argu could be error
         return True
 
     def emptyargu(self):
