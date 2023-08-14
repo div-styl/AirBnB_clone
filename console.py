@@ -123,7 +123,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, argu):
         """EOF command to exit the program"""
-        print("")  # ! new argu could be error
+        print("")  # ! print new line at the end of file
         return True
 
     def do_create(self, arg):
