@@ -46,6 +46,10 @@ class HBNBCommand(cmd.Cmd):
         "Review",
     }
 
+    def emptyline(self):
+        """empty argu + ENTER shouldn’t execute anything"""
+        pass
+
     def default(self, argu):
         """
         default commands
@@ -101,15 +105,14 @@ class HBNBCommand(cmd.Cmd):
                     dictionary = dict(eval(str_dict))
                     string = f"{class_name} {id}"
                     for attr in dictionary:
-                        self.do_update(
-                            f'{string} {attr}"{str(dictionary[attr])}"'
-                        )
+                        self.do_update(f'{string} {attr}"{str(dictionary[attr])}"')
                 else:
                     string = class_name
                     for elm in args.split(", "):
                         string += " " + elm
                     self.do_update(string)
         else:
+            print("*** Unknown syntax: {}".format(argu))
             return False
 
     def do_quit(self, argu):
@@ -118,12 +121,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, argu):
         """EOF command to exit the program"""
-        #print()  # ! new argu could be error
+        print("")  # ! new argu could be error
         return True
-
-    def emptyargu(self):
-        """empty argu + ENTER shouldn’t execute anything"""
-        pass
 
     def do_create(self, arg):
         """Create a new instance of BaseModel and print the id"""
