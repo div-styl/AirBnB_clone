@@ -104,9 +104,9 @@ class HBNBCommand(cmd.Cmd):
                     str_dict = "{" + args.split("{")[1]
                     dictionary = dict(eval(str_dict))
                     string = f"{class_name} {id}"
-                    for attr in dictionary:
+                    for attr, value in dictionary.items():
                         self.do_update(
-                            f'{string} {attr}"{str(dictionary[attr])}"'
+                            f'{string} {attr} "{str(value)}"'
                         )
                 else:
                     string = class_name
