@@ -47,17 +47,12 @@ class TestHBNBcmd_prompt(unittest.TestCase):
 class TestHBNBcmd_quit(unittest.TestCase):
     """test the cmd exit/quit should return true"""
 
-    def exit_with_none(self):
-        """return void"""
-        self.assertEqual(True, HBNBCommand.do_quit)
-
-
-class TestHBNBcmd_EOF(unittest.TestCase):
-    """test over end of file"""
-
-    def tst_EOF(self):
-        """return true"""
-        self.assertEqual(True, HBNBCommand.do_EOF)
+    def test_exit(self):
+        """test the quit cmd"""
+        with patch("sys.stdout", new=StringIO()) as output:
+            self.assertTrue(HBNBCommand().onecmd("quit"))
+        with patch("sys.stdout", new=StringIO()) as output:
+            self.assertTrue(HBNBCommand().onecmd("EOF"))
 
 
 class TestHBNBcmd_help(unittest.TestCase):
