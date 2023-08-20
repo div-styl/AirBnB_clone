@@ -33,7 +33,9 @@
     margin-bottom: 20px;
     text-align: left;
 }
-
+.places article {
+    position: relative;
+}
 /* prices */
 .places-container .price_by_night {
     font-size: 30px;
@@ -45,6 +47,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    right: 15px;
 }
 
 /* information */
