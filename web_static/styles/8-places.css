@@ -42,13 +42,14 @@
     color: #FF5A5F;
     border: 3px solid #FF5A5F;
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
+    min-width: 60px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    right: 15px;
+    right: 16px;
+    top: 10px;
 }
 
 /* information */
